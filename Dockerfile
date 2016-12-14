@@ -2,7 +2,7 @@ FROM debian:jessie
 
 ENV INFLUXDB_URL http://influxdb:8086
 ENV DEBIAN_FRONTEND noninteractive
-ENV TELEGRAF_VERSION 1.1.0
+ENV TELEGRAF_VERSION 0.11.1-1
 ENV FLUSH_INTERVAL 10
 
 RUN apt-get update && \
