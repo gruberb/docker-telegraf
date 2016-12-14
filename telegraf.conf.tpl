@@ -29,14 +29,14 @@
 # Configuration for telegraf agent
 [agent]
   # Default data collection interval for all plugins
-  interval = "10s"
+  interval = "{{ FLUSH_INTERVAL }}s"
   # Rounds collection interval to 'interval'
   # ie, if interval="10s" then always collect on :00, :10, :20, etc.
   round_interval = true
 
   # Default data flushing interval for all outputs. You should not set this below
   # interval. Maximum flush_interval will be flush_interval + flush_jitter
-  flush_interval = "10s"
+  flush_interval = "{{ FLUSH_INTERVAL }}"
   # Jitter the flush interval by a random amount. This is primarily to avoid
   # large write spikes for users running a large number of telegraf instances.
   # ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s
@@ -116,5 +116,6 @@
   endpoint = "unix:///var/run/docker.sock"
   # Only collect metrics for these containers, collect all if empty
   container_names = []
- 
+
+[[inputs.net]]
 [[inputs.netstat]]

@@ -2,10 +2,11 @@ FROM debian:jessie
 
 ENV INFLUXDB_URL http://influxdb:8086
 ENV DEBIAN_FRONTEND noninteractive
-ENV TELEGRAF_VERSION 1.1.0
+ENV TELEGRAF_VERSION 0.11.1-1
+ENV FLUSH_INTERVAL 10
 
 RUN apt-get update && \
-	apt-get install -y init-system-helpers curl python-pip && \
+	apt-get install -y init-system-helpers curl lsof python-pip && \
 	curl -O http://get.influxdb.org/telegraf/telegraf_${TELEGRAF_VERSION}_amd64.deb && \
 	dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && rm telegraf_${TELEGRAF_VERSION}_amd64.deb && \
   pip install envtpl && \
