@@ -36,7 +36,7 @@
 
   # Default data flushing interval for all outputs. You should not set this below
   # interval. Maximum flush_interval will be flush_interval + flush_jitter
-  flush_interval = "{{ FLUSH_INTERVAL }}"
+  flush_interval = "{{ FLUSH_INTERVAL }}s"
   # Jitter the flush interval by a random amount. This is primarily to avoid
   # large write spikes for users running a large number of telegraf instances.
   # ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s
