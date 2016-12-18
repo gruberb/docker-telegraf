@@ -7,7 +7,7 @@ ENV FLUSH_INTERVAL 10
 
 RUN apt-get update && \
 	apt-get install -y init-system-helpers curl lsof python-pip && \
-	curl -O http://get.influxdb.org/telegraf/telegraf-${TELEGRAF_VERSION}_amd64.deb && \
+	curl -O https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}_amd64.deb && \
 	dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && rm telegraf_${TELEGRAF_VERSION}_amd64.deb && \
   pip install envtpl && \
 	apt-get clean && \
