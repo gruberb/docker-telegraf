@@ -5,14 +5,12 @@ Docker image for [Telegraf](https://www.influxdata.com/time-series-platform/tele
 ## Run
 
 This image is tailered towards running on Docker Cloud. But, it also works with the most basic run command:
-```docker run -t -v /var/run/docker.sock:/var/run/docker.sock:ro gruberbastian/telegraf```
+`docker run -t -v /var/run/docker.sock:/var/run/docker.sock:ro gruberbastian/telegraf`
 
 ## Configuration for Docker container
 
 To be able to analyse different docker containers on a specific node, you need to add following volume:
-```/var/run/docker.sock```
-
-
+`/var/run/docker.sock`
 
 ## Configuration (ENV, -e)
 
